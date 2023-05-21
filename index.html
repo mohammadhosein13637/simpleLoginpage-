@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./alborz (2).png" type="image/x-icon">
+    <title>Tabriz University</title>
+    <style>
+        @font-face {
+            font-family: iransanse;
+            src: url("./IRANSansWeb\(FaNum\).ttf");
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: iransanse;
+        }
+
+        body {
+            background-color: rgb(189, 189, 189);
+        }
+
+        .right-bar {
+            background-color: rgb(189, 189, 189) !important;
+
+        }
+
+        .screen-1 {
+            background-color: white;
+        }
+
+        .container-sty {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .top-space {
+            flex: 1;
+        }
+
+        .bottom-space {
+            flex: 1;
+        }
+
+        .right-bar {
+            background-color: white;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: justify;
+            align-items: center;
+        }
+
+
+        @media (max-width: 767px) {
+            .right-bar {
+                width: 100%;
+            }
+        }
+
+        /* Logo Bar */
+        /* img Bar */
+        .img-bar {
+            width: 100%;
+            text-align: center;
+            margin-top: 0px;
+            border-radius: 5px;
+            color: purple;
+            display: flex;
+            font-size: 20px;
+            font-weight: bold;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        .img-bar img {
+            width: 70%;
+        }
+
+        /* img Bar */
+        /* Sign UP form */
+        .screen-1 {
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            border-radius: 30px;
+            box-shadow: 0 0 2em #e6e9f9;
+            gap: 2em;
+            margin-top: 10px;
+        }
+
+        .screen-1 .logo {
+            margin-top: -3em;
+            width: 100%;
+        }
+
+        .screen-1 .email {
+            background: white;
+            box-shadow: 0 0 2em #e6e9f9;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            border-radius: 20px;
+            color: #4d4d4d;
+            margin-top: -3em;
+        }
+
+        .screen-1 .email input {
+            outline: none;
+            border: none;
+            width: 100%;
+        }
+
+        .screen-1 .email input::-moz-placeholder {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        .screen-1 .email input:-ms-input-placeholder {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        .screen-1 .email input::placeholder {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        .screen-1 .email ion-icon {
+            color: #4d4d4d;
+            margin-bottom: -0.2em;
+        }
+
+        .screen-1 .password {
+            background: white;
+            box-shadow: 0 0 2em #e6e9f9;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            border-radius: 20px;
+            color: #4d4d4d;
+        }
+
+        .screen-1 .password input {
+            outline: none;
+            border: none;
+        }
+
+        .screen-1 .password input::-moz-placeholder {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        .screen-1 .password input:-ms-input-placeholder {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        .screen-1 .password input::placeholder {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        .screen-1 .password ion-icon {
+            color: #4d4d4d;
+            margin-bottom: -0.2em;
+        }
+
+        .screen-1 .password .show-hide {
+            margin-right: -5em;
+        }
+
+        .screen-1 .login {
+            padding: 1em;
+            background: #3e4684;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .screen-1 .footer {
+            display: flex;
+            font-size: 0.7em;
+            color: #5e5e5e;
+            gap: 14em;
+            padding-bottom: 10em;
+        }
+
+        .screen-1 .footer span {
+            cursor: pointer;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        /* Logo Bar */
+        .success-modal {
+            background-color: green;
+            color: white;
+            padding: 20px;
+            font-size: 15px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            border-radius: 8px;
+        }
+
+        .error-modal {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            font-size: 15px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            border-radius: 8px;
+        }
+
+        /* استایل modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+        }
+
+        /* استایل محتوای modal */
+        .modal-content {
+            background-color: white;
+            width: 300px;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /* استایل دکمه بستن */
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .sec-2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .error-msg {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-sty">
+        <div class="right-bar">
+            <div style="width: 80%; margin: auto;">
+                <!-- <div class="img-bar">
+                    <img src="./cea.png" />
+                </div> -->
+                <div class="signup-form">
+                    <div class="screen-1">
+                        <label
+                            style="direction: rtl; text-align: justify; padding-bottom: 20px; font-size: 20px; display: flex; flex-direction: row; align-items: center;"><b>ثبت
+                                نام</b>
+                            <p style="padding-right: 15px; font-size: 15px; color: gray;">مرحله اول</p>
+                        </label>
+                        <div class="email" style="direction: rtl;">
+                            <label for="name">نام و نام خانوادگی</label>
+                            <div class="sec-2">
+                                <input type="text" id="fullname" placeholder="علی انصاری" />
+                                <span class="error-msg" id="fullname-error"></span>
+                            </div>
+                        </div>
+                        <div class="password" style="direction: rtl;">
+                            <label for="email">شماره دانشجویی</label>
+                            <div class="sec-2">
+                                <input class="pas" type="number" id="studentid" placeholder="140112345678" />
+                                <span class="error-msg" id="studentid-error"></span>
+                            </div>
+                        </div>
+                        <div class="password" style="direction: rtl;">
+                            <label for="email">شماره تلفن</label>
+                            <div class="sec-2">
+                                <input class="pas" type="tel" id="phonenumber" placeholder="09141234567"
+                                    oninput="checkInputLength(this)" />
+                                <span class="error-msg" id="phonenumber-error"></span>
+                            </div>
+                        </div>
+                        <div class="password" style="direction: rtl;">
+                            <label for="email">ایمیل(اختیاری)</label>
+                            <div class="sec-2">
+                                <input class="pas" type="email" id="email" placeholder="youremail@gmail.com" />
+                                <span class="error-msg" id="email-error"></span>
+                            </div>
+                        </div>
+                        <button class="login" onclick="submitForm()">ثبت اطلاعات</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            var nameInput = document.getElementById('fullname');
+            var studentIdInput = document.getElementById('studentid');
+            var phoneNumberInput = document.getElementById('phonenumber');
+            var emailInput = document.getElementById('email');
+
+            var name = nameInput.value.trim();
+            var studentId = studentIdInput.value.trim();
+            var phoneNumber = phoneNumberInput.value.trim();
+            var email = emailInput.value.trim();
+
+            phoneNumberInput.addEventListener('input', function () {
+                var phoneNumber = phoneNumberInput.value.trim();
+                phoneNumberError.textContent = '';
+
+                if (phoneNumber.length > 0 && phoneNumber.length !== 11) {
+                    phoneNumberError.textContent = 'شماره تلفن باید 11 رقم باشد.';
+                }
+            });
+            var nameError = document.getElementById('fullname-error');
+            var studentIdError = document.getElementById('studentid-error');
+            var phoneNumberError = document.getElementById('phonenumber-error');
+
+            // Clear previous errors
+            nameError.textContent = '';
+            studentIdError.textContent = '';
+            phoneNumberError.textContent = '';
+
+            // Validate inputs
+            var isValid = true;
+            if (name === '') {
+                nameError.textContent = 'این فیلد ضروری است.';
+                isValid = false;
+            }
+            if (studentId === '') {
+                studentIdError.textContent = 'این فیلد ضروری است.';
+                isValid = false;
+            }
+            if (phoneNumber === '') {
+                phoneNumberError.textContent = 'این فیلد ضروری است.';
+                isValid = false;
+            }
+
+            if (!isValid) {
+                nameInput.classList.toggle('error');
+                studentIdInput.classList.toggle('error');
+                phoneNumberInput.classList.toggle('error');
+                return;
+            }
+
+            var data = {
+                name: name,
+                studentid: studentId,
+                phone: phoneNumber,
+                email: email
+            };
+            console.log(data);
+            var successModal = document.createElement('div');
+            successModal.className = 'success-modal';
+            successModal.textContent = 'شماره شما جهت مشاوره ثبت شد و کارشناسان ما به زودی با شما تماس خواهند گرفت';
+
+            var errorModal = document.createElement('div');
+            errorModal.className = 'error-modal';
+            errorModal.textContent = 'وارد شده اشتباه می‌باشد و یا قبلا ثبت شده است';
+
+            var modal = document.createElement('div');
+            modal.className = 'modal';
+
+            var modalContent = document.createElement('div');
+            modalContent.className = 'modal-content';
+            var closeBtn = document.createElement('span');
+            closeBtn.className = 'close';
+            closeBtn.textContent = '×';
+            modalContent.appendChild(closeBtn);
+            modalContent.appendChild(successModal);
+            modalContent.appendChild(errorModal);
+            modal.appendChild(modalContent);
+
+            document.body.appendChild(modal);
+
+            fetch('https://forms.iran.liara.run/api/utform/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    if (response.status === 201) {
+                        modal.style.display = 'block';
+                        successModal.style.display = 'block';
+                        errorModal.style.display = 'none';
+                    } else if (response.status === 400) {
+                        modal.style.display = 'block';
+                        successModal.style.display = 'none';
+                        errorModal.style.display = 'block';
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data.phone);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    console.log(response);
+                });
+
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+                location.reload();
+            });
+        }
+        // تابعی برای دریافت آدرس IP کاربر
+        function getIPAddress() {
+            return fetch('https://api64.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => data.ip)
+                .catch(error => {
+                    console.error('Error:', error);
+                    return null;
+                });
+        }
+
+        // تابعی برای ارسال آدرس IP به API
+        function sendIPAddress(ipAddress) {
+            var apiURL = 'https://forms.iran.liara.run/api/log/';
+            var data = {
+                ip: ipAddress
+            };
+
+            return fetch(apiURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        console.log('آدرس IP با موفقیت ارسال شد:', ipAddress);
+                    } else {
+                        console.error('خطا در ارسال آدرس IP:', response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+        // استفاده از توابع بالا در صفحه ورود کاربر
+        getIPAddress()
+            .then(ipAddress => {
+                if (ipAddress) {
+                    sendIPAddress(ipAddress);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        function checkInputLength(input) {
+            var maxLength = 11; // تعداد حداکثر ارقام مجاز
+            if (input.value.length > maxLength) {
+                input.value = input.value.slice(0, maxLength); // قطع کردن اعداد اضافی
+            }
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    https://forms.iran.liara.run/api/utform/
+
+POST 
+
+{
+    "name": "",
+    "studentid": "",
+    "phone": "",
+    "email": ""
+}
+
+Phone and name can not be null or blank,
+Mobile number must not be registered beforeو
+Email is optional
+ -->
